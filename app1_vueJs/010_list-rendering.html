@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+  <ul>
+   <li v-for="post in posts" :key="post.id">{{post.title}}</li>
+  </ul>  
+  <table>
+    <tr>
+    <th v-for="post in posts" :key="post.id">{{post.title}}</th>
+    </tr>
+    <tr>
+    <td v-for="post in posts" :key="post.id">{{post.body}}</td>
+     </tr>
+  </table>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      posts: [
+        {id: 1, title: 'Post 1', body: 'This is post one!!!.'},
+        {id: 2, title: 'Post 2', body: 'This is post two!!!.'},
+        {id: 3, title: 'Post 3', body: 'This is post three!!!.'},
+        {id: 4, title: 'Post 4', body: 'This is post four!!!.'},
+        {id: 5, title: 'Post 5', body: 'This is post five!!!.'},
+        {id: 5, title: 'Post 6', body: 'This is post six!!!.'}
+      ],
+ 
+    }
+
+  })
+
+
+</script>
