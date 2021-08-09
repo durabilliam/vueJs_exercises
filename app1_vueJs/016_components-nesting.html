@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+  <posts></posts>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<script>
+  
+  //Vue Component
+  Vue.component('posts', {
+
+    template: `
+
+      <div>
+        <ul>
+          <post v-for="post in posts" :key="post.id">{{post.id}} {{ post.title }}</post>
+        </ul>
+      </div>
+
+    `,
+
+    data() {
+      return {
+
+        posts: [
+          {id: 1, title: 'This is the first Post'},
+          {id: 2, title: 'This is the second Post'},
+          {id: 3, title: 'This is the third Post'},
+          {id: 4, title: 'This is the fourth Post'},
+          {id: 5, title: 'This is the fifth Post'},
+          {id: 6, title: 'This is the sixth Post'},
+
+
+
+
+
+        ]
+        
+      }
+    },
+
+    methods: {
+      display(){
+        console.log('hello');
+      } 
+
+    }
+    
+  });
+
+  Vue.component('post', {
+
+    template: '<li><slot></slot></li>'
+
+
+
+
+  })
+
+  //Vue Model (vm)
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello'
+    }
+
+  })
+
+
+</script>
