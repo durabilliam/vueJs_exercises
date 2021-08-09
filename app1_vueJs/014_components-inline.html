@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+  <posts inline-template>
+    <h1 @click="display">HELLO</h1>
+  </posts>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<script>
+  
+  //Vue Component
+  Vue.component('posts', {
+    data() {
+      return {
+        
+      }
+    },
+
+    methods: {
+      display(){
+        console.log('hello');
+      } 
+
+    }
+    
+  });
+
+  //Vue Model (vm)
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello'
+    }
+
+  })
+
+
+</script>
