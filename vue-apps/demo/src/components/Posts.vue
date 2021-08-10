@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr v-for="post in posts" :key="post.id">
-          <td>{{ post.userId}}</td>
+          <td>{{ post.userId }}</td>
           <td>{{ post.id }}</td>
           <td>{{ post.title }}</td>
           <td>{{ post.body }}</td>
@@ -22,14 +22,16 @@
 </template>
 
 <script>
-
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "Posts",
   data() {
     return {
       posts: [],
+
+      // Example of Simple User Object:
+      //
       // posts: [
       //   { id: 1, title: 'Post 1', body: 'jiarfshviua'},
       //   { id: 2, title: 'Post 2', body: 'jekrwhvei5u'},
@@ -39,11 +41,11 @@ export default {
     };
   },
 
-  created(){
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(posts => {
-      this.posts = posts.data
-    }) ;
-  }
+  created() {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((posts) => {
+      this.posts = posts.data;
+    });
+  },
 };
 </script>
 
